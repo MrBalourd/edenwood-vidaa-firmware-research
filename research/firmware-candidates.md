@@ -16,6 +16,18 @@ The saved test snapshot also contains `VS0350UF3` (January 2026), `VS0355UF3`, a
 
 The 678,550,126-byte `VS0355UE2_0202` archive was not downloaded in full or saved locally. Only HTTP headers, the ZIP directory, and the small `basic.ini` member were read with byte-range requests; no firmware was installed or flashed.
 
+## USB firmware leads on the EL.NT72690VU-FG95 board (2026-10-24)
+
+The target model family uses the `EL.NT72690VU-FG95` mainboard (see `fg95-board-firmware.md` for evidence). Two USB firmware offers exist for that exact board, both paywalled and therefore **uninspected**:
+
+| Candidate | Why it appeared relevant | Mismatch or limitation | Status |
+| --- | --- | --- | --- |
+| `USB_Upgrade_EL.NT72690VU-FG95_4K.zip` (mundotecnico premium) | Board-exact package for the target's mainboard | Contents not viewable without a premium account; no published Project ID, model, or region metadata | Best static-comparison lead; unverified |
+| HQS50X6500 package: `usb_NOVATEK_72690_AM_OEM_4K_1080P.bin` + `FACBURN.CTV` + `CV72690CustomerFile` (newtodofirmware subscription) | Board-exact (HQS50X6500 uses EL.NT72690VU-FG95) | HQS is an Argentine brand and the bin name suggests an Americas (`AM`) build; the target is EU_A with DVB tuners. Package metadata not published | Structure-level lead only; do not flash |
+| Allview 50iPlay6200-U eMMC dump (remont-aud) | Same board, EU-region 50" VIDAA unit | Raw per-device eMMC backup containing that unit's serial, MAC, HDCP/Widevine keys — not a USB firmware substitute | Excluded as a flashing candidate; possible reference only |
+
+Board identity alone does not establish firmware compatibility: region (AM vs EU_A), panel configuration (`CV72690CustomerFile`), Project ID, and branding must all match the target `VS0350UF2_0208` before any package could be considered. None of these offers has been purchased, downloaded, or inspected.
+
 ## Current answer
 
 No exact model package has been confirmed. Filename similarity, software-family similarity, or a shared Project ID is insufficient. Do not install or flash any of these candidates.

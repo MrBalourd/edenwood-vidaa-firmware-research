@@ -33,3 +33,20 @@
 - Reconciled saved page totals: production 5,050 rows / 5,000 distinct names; test 15,356 rows / 5,256 distinct names. Repeated pages account for the extra rows.
 - Found the additional `VS0355UE2_0202` OEM basic package in the test snapshot. A bounded Range inspection of its ZIP metadata and `basic.ini` found version `V0000.08.00X.O1120`, with no target model or Project ID in that file.
 - The candidate is a different 0355/UE2/0202 variant. No full firmware package was downloaded or installed; no exact target match has been confirmed.
+
+## 2026-10-24 — External documentary research
+
+- The built-in WebSearch tool was unavailable (HTTP 403); searches were run read-only against Brave Search via `curl`. All sources, URLs, and consultation dates are recorded in `public-sources.md`.
+- Confirmed the retail model's VIDAA system and QLED specs from a public spec sheet (lcd-compare.com).
+- Found a Hisense service manual for the NT72690 chassis documenting USB upgrade (including the `usb_NOVATEK_DEV_EU.bin` fallback), serial upgrading, Mboot, and eMMC at platform level.
+- Found the Hisense open-source release for VIDAA U7 TVs on NT72690 (kernel, U-Boot, AVB components), and VIZIO NT72690 source releases. The Hisense README confirms the `VS####XG#_####` internal-name scheme; it contains no `VS0350` or Edenwood entry.
+- Found independent board-level evidence that Edenwood TVs use `EL.NT72690` mainboards (32"/40" models via resale listings); the 50" target board suffix remains unknown.
+- Noted the `weinzii/vidaa-edge` toolkit as evidence of VIDAA app-level APIs (`Hisense_installApp`, `Appinfo.json` writes, `Hisense_FileRead`); not used, since installation methods write to the TV.
+- No new firmware candidate was found; nothing was downloaded, installed, or flashed.
+
+## 2026-10-24 — EL.NT72690VU-FG95 board and firmware investigation
+
+- Resale listings directly tied the target model family to the `EL.NT72690VU-FG95` mainboard: Edenwood `EED50EA03UHD-EL` (50", spelling variant of `ED50EA03UHD-EL`) and Edenwood `ED55EA05UHD-EL` (55", panel ST5461D12-4). Recorded in `fg95-board-firmware.md`.
+- Mapped the FG95 board across brands: HQS50X6500/HQS55X6500 (Argentina), Allview 50iPlay6200-U (EU, VIDAA 6.0, DVB), Essentielb QLED306/307/308 (France, VIDAA, near-identical spec sheet to the target), plus the Edenwood units. KANJI/PANORAMIC "FG95" boards are EL.MT9602PRO (MediaTek) and were excluded as a suffix coincidence.
+- Found FG95 firmware offers, all paywalled: newtodofirmware HQS50X6500 package (`usb_NOVATEK_72690_AM_OEM_4K_1080P.bin` + `FACBURN.CTV` + `CV72690CustomerFile`), mundotecnico `USB_Upgrade_EL.NT72690VU-FG95_4K.zip` (premium), and a remont-aud Allview eMMC dump (device-specific keys; excluded as a firmware substitute). Nothing was purchased or downloaded.
+- Concluded that board identity does not establish firmware compatibility (region AM vs EU_A, panel config, Project ID, branding). The best static-comparison candidate is the mundotecnico board-exact package, gated behind a premium account.

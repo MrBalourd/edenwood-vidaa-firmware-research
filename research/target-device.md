@@ -15,4 +15,4 @@ These are model/build identifiers, not a TV serial number. No unique device iden
 
 ## Evidence limits
 
-The recap reports these fields from the TV's information and factory menus. The motherboard reference remains unknown. Project ID by itself is not a unique model key: another observed package with Project ID 101 maps to VS0624FE2_0202.
+The recap reports these fields from the TV's information and factory menus. A resale listing for the spelling variant `EED50EA03UHD-EL` reports an `EL.NT72690VU-FG95` mainboard; this remains provisional because the target TV has not been inspected directly. Project ID by itself is not a unique model key: another observed package with Project ID 101 maps to VS0624FE2_0202.

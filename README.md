@@ -16,6 +16,8 @@ The public OTA listing observations are affected by CDN caching and unreliable c
 - Static analysis of the VIDAA launcher package.
 - A dated research timeline and outstanding questions.
 - Saved listing snapshot audit with duplicate-page accounting.
+- Public external sources (specs, service manuals, open-source releases, board evidence) with URLs and consultation dates in [research/public-sources.md](research/public-sources.md).
+- The EL.NT72690VU-FG95 mainboard mapping and its paywalled USB firmware leads in [research/fg95-board-firmware.md](research/fg95-board-firmware.md).
 
 ## Safety and scope
 
