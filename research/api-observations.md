@@ -13,9 +13,9 @@ All endpoints below are public service names and routes observed in read-only re
 
 ### Observed behavior and caveats
 
-- Earlier transcript notes report a cache-busted run returning 5,050 production names and 15,356 test names. These counts are historical claims in the supplied transcript, not a reproducible current baseline.
-- A later saved test listing contains 5,256 distinct names. Several saved pages repeat prior results; the saved snapshot and earlier reported counts do not reconcile.
-- The live CDN has returned stale or prefix/marker-inconsistent XML responses in subsequent checks. The saved production snapshot does not establish a complete catalog: its first page contains 5,000 mostly manual objects and continuation was not reliable.
+- A later audit of the saved page XML reconciled the earlier totals: production had 5,050 rows but only 5,000 distinct object names; test had 15,356 rows but only 5,256 distinct names.
+- In the production snapshot, page 2 repeated 50 names from page 1 and page 3 was empty. In the test snapshot, pages 3 and 5 repeated page 1, page 4 repeated page 2, and page 6 added 256 names. The previously reported totals were raw row counts, not unique object counts.
+- The live CDN has also returned stale or prefix/marker-inconsistent XML responses in subsequent checks. The production snapshot contains 5,000 unique, mostly manual objects and does not establish a complete production firmware catalog.
 - A direct request to the Azure Blob origin returned HTTP 409 (`Public access is not permitted`). No access-control bypass was attempted.
 - The test listing's `include=metadata` response was HTTP 200 but returned stale-looking XML with `Prefix=EM-OTA`, `MaxResults=5`, and five blobs. Treat it as cache-affected.
 

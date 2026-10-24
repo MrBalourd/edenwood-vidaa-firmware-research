@@ -27,3 +27,9 @@
 - On the test host, page 2 returned five names that all overlapped page 1 despite a new cache-buster; continuation is not reliable.
 - No exact UF2 match appeared in the responses, but the stale and unfiltered results cannot prove that the object is absent.
 - No credential values were sent or saved.
+
+## 2026-10-24 — Snapshot reconciliation and bounded package inspection
+
+- Reconciled saved page totals: production 5,050 rows / 5,000 distinct names; test 15,356 rows / 5,256 distinct names. Repeated pages account for the extra rows.
+- Found the additional `VS0355UE2_0202` OEM basic package in the test snapshot. A bounded Range inspection of its ZIP metadata and `basic.ini` found version `V0000.08.00X.O1120`, with no target model or Project ID in that file.
+- The candidate is a different 0355/UE2/0202 variant. No full firmware package was downloaded or installed; no exact target match has been confirmed.

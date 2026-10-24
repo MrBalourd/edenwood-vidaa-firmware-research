@@ -15,6 +15,7 @@ The public OTA listing observations are affected by CDN caching and unreliable c
 - Firmware candidate comparison and reasons each candidate is unconfirmed.
 - Static analysis of the VIDAA launcher package.
 - A dated research timeline and outstanding questions.
+- Saved listing snapshot audit with duplicate-page accounting.
 
 ## Safety and scope
 

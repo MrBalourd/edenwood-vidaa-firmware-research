@@ -6,4 +6,6 @@
 4. Is there a distinct hardware/model code in the factory menu that maps the retail model to the package naming scheme?
 5. What is the exact USB package validation format? No candidate has been inspected or installed.
 
+6. Does the `VS0355UE2_0202` base package have any documented relationship to the target `VS0350UF2_0208`? The inspected `basic.ini` supplies only a different version string.
+
 Until these are resolved, keep all package candidates as unverified and do not flash them.
