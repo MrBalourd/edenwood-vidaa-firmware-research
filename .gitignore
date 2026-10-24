@@ -1,0 +1,37 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.mobileprovision
+credentials.json
+secrets.*
+
+# Raw captures and local exports
+*.pcap
+*.pcapng
+*.har
+*raw*
+*capture*
+
+# Firmware, app packages, and archives
+*.ipk
+*.pkg
+*.zip
+*.bin
+*.img
+*.tar
+*.tar.gz
+*.7z
+*.dmg
+*.iso
+
+# Local analysis output
+/tmp/
+/cache/
+/output/
+*.log
+.DS_Store
